@@ -1,7 +1,11 @@
 #include "Class.h"
-void initiate(vec_2D&);
+void genHM(vec_2D&);
+void selectHarmony();
+void selectFromHM();
+void newHarmony();
 
-void initiate(vec_2D &HM)
+
+void genHM(vec_2D &HM)
 {
     for (int i = 0; i < HMS; i++)
     {
@@ -11,3 +15,17 @@ void initiate(vec_2D &HM)
         }
     }
 }
+
+void selectHarmony()
+{
+    float probibility = (double) rand() / (RAND_MAX + 1);
+
+    if( probibility < HMCR)
+        selectFromHM();
+    
+    else
+        newHarmony();
+    
+}
+
+void selectFromHM();

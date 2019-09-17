@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <stdio.h>
+#include <math.h>
 #include "HS_ARG.h"
 
 using namespace std;
