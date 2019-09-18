@@ -4,6 +4,7 @@ void genHM(vec_2D&);
 vec_1D selectHarmony();
 vec_1D selectFromHM();
 vec_1D newHarmony();
+vec_1D pitch(vec_1D&);
 
 
 void genHM(vec_2D &HM)
@@ -35,7 +36,6 @@ vec_1D selectFromHM()
 {
     int id = rand() % HMS;
     vec_1D harmony = HM[id];
-    cout<<"yes";
 
     return harmony;
 }
@@ -45,9 +45,26 @@ vec_1D newHarmony()
     vec_1D harmony(columnNum);
 
     for(int i=0;i<columnNum;i++)
-    {
         harmony[i] = rand() % 5;
-    }
-    cout<<"No";
+    
     return harmony;
+}
+
+vec_1D pitch(vec_1D &harmony)
+{
+    float probibility = (double) rand() / (RAND_MAX + 1);
+
+    if(probibility <= PAR)
+    {
+        if(probibility <= PAR/2)
+        {
+            
+        }
+
+        else
+        {
+            /* code */
+        }
+        
+    }
 }

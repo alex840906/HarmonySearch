@@ -22,6 +22,8 @@ int main()
     for(int i=0;i<columnNum;i++)
         cout<<newHarmony[i];
 
+    cout<<PAR/2;
+
     //Check Harmony Memory
     /*
     for (int i = 0; i < HMS; i++)
