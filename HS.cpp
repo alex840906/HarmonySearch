@@ -15,11 +15,12 @@ float fitness(vec_1D &solution)
 int main()
 {
     srand(time(NULL));
-    vec_2D HM(HMS, vec_1D(columnNum, 0));
-
+    
     genHM(HM);
-    float probibility = (double) rand() / (RAND_MAX + 1);
-    cout<<probibility;
+    vec_1D newHarmony = selectHarmony();
+
+    for(int i=0;i<columnNum;i++)
+        cout<<newHarmony[i];
 
     //Check Harmony Memory
     /*
