@@ -6,6 +6,7 @@
 #define columnNum 3
 #include <vector>
 
+#include <vector>
 using namespace std;
 typedef vector<int> vec_1D;
 typedef vector<vector<int>> vec_2D;

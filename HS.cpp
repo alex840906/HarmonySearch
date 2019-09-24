@@ -2,16 +2,7 @@
 #include "Class.h"
 #include "HS_operator.h"
 #include "HS_ARG.h"
-
-
-float fitness(vec_1D &solution)
-{
-    int fitnessValue=0;
-    fitnessValue = pow((solution[0]-2),2) + pow(solution[1]-3,4)\
-        + pow(solution[2]-1,2) + 3;
-
-    return fitnessValue;
-}
+#include "fitness.h"
 
 int main()
 {
@@ -23,7 +14,6 @@ int main()
     for(int i=0;i<columnNum;i++)
         cout<<newHarmony[i];
 
-    cout<<"123";
 
     //Check Harmony Memory
     /*
