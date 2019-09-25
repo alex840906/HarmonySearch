@@ -31,7 +31,9 @@ vec_1D improvise()
     }
 
     int score = fitness(newHarmony);
-    
+
+    //if(score<)
+
 
 
 

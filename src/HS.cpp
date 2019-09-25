@@ -10,14 +10,10 @@ int main()
     genHM(HM);
 
     vec_1D newHarmony = selectHarmony();
+ 
 
-    // for (int i = 0; i < columnNum; i++)
-    //     cout << newHarmony[i];
+    calculateScoreMatrix(HM, scroeMatrix, scoreIndex);
 
-    // cout << endl;
-    // cout << fitness(newHarmony) << endl;
-
-    calculateScoreMatrix(HM, scroeMatrix);
     for (int i = 0; i < HMS; i++)
     {
         for (int j = 0; j < columnNum; j++)
@@ -25,17 +21,10 @@ int main()
         cout<<endl;
         cout << scroeMatrix[i]<<endl;
     }
-        
+    
+    for(int i=0;i<HMS;i++)
+        cout<<scoreIndex[i];
 
-    //Check Harmony Memory
-    /*
-    for (int i = 0; i < HMS; i++)
-    {
-        for (int j = 0; j < columnNum; j++)
-            cout<<HM[i][j];
-        cout<<endl;          
-    }
-    */
     system("pause");
     return 0;
 }
