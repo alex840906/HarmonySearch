@@ -14,5 +14,6 @@ typedef vector<int> vec_1D;
 typedef vector<vector<int>> vec_2D;
 
 inline vec_2D HM;
+inline vec_1D scroeMatrix;
 
 #endif
