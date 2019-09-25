@@ -1,5 +1,4 @@
 #include <time.h>
-#include "Class.h"
 #include "HS_operator.h"
 #include "HS_ARG.h"
 #include "fitness.h"
@@ -14,7 +13,8 @@ int main()
     for(int i=0;i<columnNum;i++)
         cout<<newHarmony[i];
 
-
+    cout<<endl;
+    cout<<fitness(newHarmony);
     //Check Harmony Memory
     /*
     for (int i = 0; i < HMS; i++)

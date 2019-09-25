@@ -1,6 +1,5 @@
 #include "HS_operator.h"
 
-
 void swap(vec_1D &vec, int x, int y)
 {
     int tmp = vec[x];
@@ -8,17 +7,35 @@ void swap(vec_1D &vec, int x, int y)
     vec[y] = tmp;
 }
 
-void genHM(vec_2D &test)
+void genHM(vec_2D &HM)
 {
-    test.assign(HMS, vec_1D(columnNum, 0));
+    HM.assign(HMS, vec_1D(columnNum, 0));
     for (int i = 0; i < HMS; i++)
     {
         for (int j = 0; j < columnNum; j++)
         {
-            test[i][j] = rand() % 5;
+            HM[i][j] = rand() % 5;
         }
     }
 }
+
+vec_1D improvise()
+{
+    vec_1D newHarmony(columnNum);
+    int id;
+
+    for(int i = 0; i <=columnNum; i++)
+    {
+        id = rand() % HMS;
+        newHarmony[i] = HM[id][i];
+    }
+
+    int score = fitness(newHarmony);
+
+
+
+}
+
 
 vec_1D selectHarmony()
 {
