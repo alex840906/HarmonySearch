@@ -8,12 +8,19 @@ int main()
     srand(time(NULL));
 
     genHM(HM);
-
-    vec_1D newHarmony = selectHarmony();
- 
-
     calculateScoreMatrix(HM, scroeMatrix, scoreIndex);
+    int iteration = 0;
 
+    while(iteration <= 0 )
+    {
+        improvise();
+        vec_1D newHarmony = selectHarmony();
+        //newHarmony = pitch(newHarmony);
+        // update(newHarmony);
+        iteration++;
+    }
+
+    
     for (int i = 0; i < HMS; i++)
     {
         for (int j = 0; j < columnNum; j++)

@@ -104,3 +104,26 @@ vec_1D pitch(vec_1D &harmony)
     }
     return harmony;
 }
+
+void update(vec_1D &newHarmony)
+{
+    int score = fitness(newHarmony);
+
+    if (score < scroeMatrix[scoreIndex[HMS - 1]])
+    {
+        for (int i = 0; i < columnNum; i++)
+        {
+            HM[scoreIndex[HMS - 1]][i] = newHarmony[i];
+        }
+        scroeMatrix[scoreIndex[HMS - 1]] = score;
+
+        for (int i = 0; i < HMS - 1; i++)
+        {
+            for (int j = 0; j < HMS - 1; j++)
+            {
+                if (scroeMatrix[scoreIndex[j]] > scroeMatrix[scoreIndex[j + 1]])
+                    swap(scoreIndex, j, j + 1);
+            }
+        }
+    }
+}
