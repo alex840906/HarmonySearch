@@ -24,7 +24,7 @@ vec_1D improvise()
     vec_1D newHarmony(columnNum);
     int id;
 
-    for(int i = 0; i <=columnNum; i++)
+    for (int i = 0; i <= columnNum; i++)
     {
         id = rand() % HMS;
         newHarmony[i] = HM[id][i];
@@ -32,27 +32,37 @@ vec_1D improvise()
 
     int score = fitness(newHarmony);
 
-    //if(score<)
+    if (score < scroeMatrix[scoreIndex[HMS - 1]])
+    {
+        for (int i = 0; i < columnNum; i++)
+        {
+            HM[scoreIndex[HMS - 1]][i] = newHarmony[i];
+        }
+        scroeMatrix[scoreIndex[HMS - 1]] = score;
 
-
-
-
-
+        for (int i = 0; i < HMS - 1; i++)
+        {
+            for (int j = 0; j < HMS - 1; j++)
+            {
+                if (scroeMatrix[scoreIndex[j]] > scroeMatrix[scoreIndex[j + 1]])
+                    swap(scoreIndex, j, j + 1);
+            }
+        }
+    }
 }
-
 
 vec_1D selectHarmony()
 {
-    float probibility = (double) rand() / (RAND_MAX + 1);
+    float probibility = (double)rand() / (RAND_MAX + 1);
     vec_1D harmony;
 
-    if( probibility < HMCR)
+    if (probibility < HMCR)
         harmony = selectFromHM();
-    
+
     else
         harmony = newHarmony();
 
-    return harmony;  
+    return harmony;
 }
 
 vec_1D selectFromHM()
@@ -67,31 +77,30 @@ vec_1D newHarmony()
 {
     vec_1D harmony(columnNum);
 
-    for(int i=0;i<columnNum;i++)
+    for (int i = 0; i < columnNum; i++)
         harmony[i] = rand() % 5;
-    
+
     return harmony;
 }
 
 vec_1D pitch(vec_1D &harmony)
 {
-    float probibility = (double) rand() / (RAND_MAX + 1);
+    float probibility = (double)rand() / (RAND_MAX + 1);
 
-    if(probibility <= PAR)
+    if (probibility <= PAR)
     {
         int id = rand() % 5;
-        if(probibility <= PAR/2)
+        if (probibility <= PAR / 2)
         {
-            if(id != 0)
-                swap(harmony,id,id-1);
+            if (id != 0)
+                swap(harmony, id, id - 1);
         }
 
         else
         {
-            if(id != 4)
-                swap(harmony,id,id+1);
+            if (id != 4)
+                swap(harmony, id, id + 1);
         }
-        
     }
     return harmony;
 }

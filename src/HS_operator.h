@@ -11,5 +11,4 @@ vec_1D selectFromHM();
 vec_1D newHarmony();
 vec_1D pitch(vec_1D&);
 
-
 #endif
