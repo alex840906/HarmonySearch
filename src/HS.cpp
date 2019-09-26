@@ -7,17 +7,19 @@ int main()
 {
     srand(time(NULL));
 
-    genHM(HM);
-    calculateScoreMatrix(HM, scroeMatrix, scoreIndex);
-    int run=0;
-    int iteration = 0;
+    int run = 0;
+    
+    float total = 0;
 
     vec_1D newHarmony(columnNum);
     //newHarmony.resize(columnNum);
 
-    while (run < 1)
+    while (run < 30)
     {
-        int total=0;
+        genHM(HM);
+        calculateScoreMatrix(HM, scroeMatrix, scoreIndex);
+        int iteration = 0;
+        
         while (iteration < 1000)
         {
             improvise();
@@ -36,8 +38,10 @@ int main()
             // }
             // cout<<endl;
         }
+        total+=scroeMatrix[scoreIndex[0]];
         run++;
     }
+    cout<<"Avg score = "<<total/run;
 
     // for (int i = 0; i < HMS; i++)
     // {
