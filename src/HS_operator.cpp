@@ -4,7 +4,8 @@ void swap(vec_1D &vec, int x, int y)
 {
     int tmp = vec[x];
     vec[x] = vec[y];
-    vec[y] = tmp;
+    vec[y] = tmp; 
+     
 }
 
 void genHM(vec_2D &HM)
@@ -54,13 +55,17 @@ void improvise()
 vec_1D selectHarmony()
 {
     float probibility = (double)rand() / (RAND_MAX + 1);
-    vec_1D harmony;
+    vec_1D harmony(columnNum);
 
     if (probibility < HMCR)
-        harmony = selectFromHM();
+    {
+        harmony = selectFromHM();     
+    }
 
     else
+    {
         harmony = newHarmony();
+    }
 
     return harmony;
 }
@@ -85,24 +90,31 @@ vec_1D newHarmony()
 
 void pitch(vec_1D &harmony)
 {
+   
     double probibility = (double)rand() / (RAND_MAX + 1);
 
     if (probibility <= PAR)
     {
-        int id = rand() % 5;
-        cout<<id<<","<<probibility<<endl;
+        int id = rand() % 3;
+        
         if (probibility < PAR / 2)
         {
-            // if (id > 0)
-            //     swap(harmony, id, id - 1);
+            //cout<<id<<","<<probibility<<endl;
+            if (id > 0)
+            {
+                //cout<<"id = "<<id<<endl;
+                swap(harmony, id, id - 1);       
+            }
+                
         }
-
-        // else
-        // {
-        //     if (id < 4)
-        //         swap(harmony, id, id + 1);
-        // }
+        
+        else
+        {
+            if (id < 2)
+                swap(harmony, id, id + 1);
+        }
     }
+   
 }
 
 void update(vec_1D &newHarmony)

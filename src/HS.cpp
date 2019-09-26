@@ -9,19 +9,36 @@ int main()
 
     genHM(HM);
     calculateScoreMatrix(HM, scroeMatrix, scoreIndex);
+    int run=0;
     int iteration = 0;
 
-    while(iteration <= 100 )
+    vec_1D newHarmony(columnNum);
+    //newHarmony.resize(columnNum);
+
+    while (run < 1)
     {
-        improvise();
-        vec_1D newHarmony = selectHarmony();
-        pitch(newHarmony);
-        // update(newHarmony);
-        iteration++;
-        //cout<<iteration<<","<<scroeMatrix[scoreIndex[0]]<<endl;
+        int total=0;
+        while (iteration < 1000)
+        {
+            improvise();
+            newHarmony = selectHarmony();
+            pitch(newHarmony);
+            update(newHarmony);
+            newHarmony.clear();
+            iteration++;
+
+            // cout<<iteration<<","<<scroeMatrix[scoreIndex[0]]<<endl;
+            // for(int i=0;i<HMS;i++)
+            // {
+            //     for(int j:HM[i])
+            //         cout<<j;
+            //     cout<<endl;
+            // }
+            // cout<<endl;
+        }
+        run++;
     }
 
-    
     // for (int i = 0; i < HMS; i++)
     // {
     //     for (int j = 0; j < columnNum; j++)
@@ -29,7 +46,7 @@ int main()
     //     cout<<endl;
     //     cout << scroeMatrix[i]<<endl;
     // }
-    
+
     // for(int i=0;i<HMS;i++)
     //     cout<<scoreIndex[i];
 

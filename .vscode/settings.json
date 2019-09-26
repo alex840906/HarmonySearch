@@ -32,7 +32,12 @@
         "utility": "cpp",
         "numeric": "cpp",
         "vector": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "memory": "cpp",
+        "optional": "cpp",
+        "functional": "cpp"
     },
     "C_Cpp.dimInactiveRegions": false
 }
