@@ -5,11 +5,11 @@
 
 void swap(vec_1D &, int, int);
 void genHM(vec_2D&);
-vec_1D improvise();
+void improvise();
 vec_1D selectHarmony();
 vec_1D selectFromHM();
 vec_1D newHarmony();
-vec_1D pitch(vec_1D&);
+void pitch(vec_1D&);
 void update(vec_1D &);
 
 #endif

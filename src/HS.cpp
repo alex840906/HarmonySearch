@@ -11,26 +11,27 @@ int main()
     calculateScoreMatrix(HM, scroeMatrix, scoreIndex);
     int iteration = 0;
 
-    while(iteration <= 0 )
+    while(iteration <= 100 )
     {
         improvise();
         vec_1D newHarmony = selectHarmony();
-        //newHarmony = pitch(newHarmony);
+        pitch(newHarmony);
         // update(newHarmony);
         iteration++;
+        //cout<<iteration<<","<<scroeMatrix[scoreIndex[0]]<<endl;
     }
 
     
-    for (int i = 0; i < HMS; i++)
-    {
-        for (int j = 0; j < columnNum; j++)
-            cout << HM[i][j];
-        cout<<endl;
-        cout << scroeMatrix[i]<<endl;
-    }
+    // for (int i = 0; i < HMS; i++)
+    // {
+    //     for (int j = 0; j < columnNum; j++)
+    //         cout << HM[i][j];
+    //     cout<<endl;
+    //     cout << scroeMatrix[i]<<endl;
+    // }
     
-    for(int i=0;i<HMS;i++)
-        cout<<scoreIndex[i];
+    // for(int i=0;i<HMS;i++)
+    //     cout<<scoreIndex[i];
 
     system("pause");
     return 0;
